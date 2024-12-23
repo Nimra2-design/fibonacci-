@@ -1,0 +1,10 @@
+def fibonacci_generator():
+    a, b = 0, 1  # Initialize the first two numbers of the Fibonacci sequence
+    while True:  # Infinite loop to continue generating numbers
+        yield a  # Produce the current value of `a`
+        a, b = b, a + b  # Update `a` and `b` for the next Fibonacci numbers
+
+# Example usage:
+fib_gen = fibonacci_generator()
+for _ in range(10):  # Generate the first 10 Fibonacci numbers
+    print(next(fib_gen))
